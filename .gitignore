@@ -13,3 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# seed data
+/db/seeds/*.yml
+
+# swap file
+*.swp
