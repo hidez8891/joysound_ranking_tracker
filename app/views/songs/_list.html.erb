@@ -1,0 +1,10 @@
+<%# song list %>
+<h3>Artist Song</h3>
+<div class="clearfix">
+  <ul class="nav nav-list nav-stacked sidenav">
+    <% @current_song.artist.songs.order(:title).each do |song| %>
+      <% active = (@current_song.id == song.id) %>
+      <li class="<%= 'active' if active %>"><%= link_to song.title , song %></li>
+    <% end %>
+  </ul>
+</div>

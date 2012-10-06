@@ -1,0 +1,19 @@
+<%# table %>
+<table class="table table-hover table-ranking">
+  <tbody>
+  <% @current_song.logs.order('date desc').each do |log| %>
+    <%
+        preday_log = log.previous_day
+        diff_point = (preday_log) ? log.point - preday_log.point : 0
+        diff_rank  = (preday_log) ? preday_log.rank - log.rank   : 0
+    %>
+    <tr>
+      <td class="date">      <a href=""><%= log.date             %></a></td>
+      <td class="point">     <a href=""><%= "%d票"  % log.point  %></a></td>
+      <td class="diff_point"><a href=""><%= "(%+d)" % diff_point %></a></td>
+      <td class="rank" >     <a href=""><%= "%d位"  % log.rank   %></a></td>
+      <td class="diff_rank"> <a href=""><%= "(%+d)" % diff_rank  %></a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

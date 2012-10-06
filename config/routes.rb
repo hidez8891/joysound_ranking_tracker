@@ -1,9 +1,11 @@
 JoysoundRankingWatcher::Application.routes.draw do
-  resources :logs
+  # get "ranking/index"
+  # match "ranking/artist(/:id)" => "ranking#artist"
+  # match "ranking/graph/:id" => "ranking#graph"
 
-  resources :songs
-
-  resources :artists
+  root to: 'ranking#index', as: 'ranking'
+  match 'artist/:id' => 'artists#index', :as => 'artist'
+  match 'song/:id' => 'songs#index', :as => 'song'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

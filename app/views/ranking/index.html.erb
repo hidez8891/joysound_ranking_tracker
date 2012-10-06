@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <h1>Joysound Request Ranking Tracker</h1>
+  <p class="lead"><%= Artist.count %> artists, <%= Song.count %> songs registerd.</p>
+<% end %>
+
+<%# artist list %>
+<div class="span4">
+  <section>
+    <%= render :partial => 'artists/list' %>
+  </section>
+</div>
+
+<%# ranking table %>
+<div class="span8">
+  <section>
+    <h3>Request Ranking (<%= @latestday %>)</h3>
+    <%= render :partial => 'artists/ranking', :locals => { :ranking => @ranking } %>
+  </section>
+</div>

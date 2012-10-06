@@ -1,23 +1,40 @@
-<h1>Listing artists</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @artists.each do |artist| %>
-  <tr>
-    <td><%= artist.name %></td>
-    <td><%= link_to 'Show', artist %></td>
-    <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-    <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% content_for :head do %>
+  <h1><%= @current_artist.name %></h1>
+  <p class="lead"><%= @current_artist.songs.count %> songs registerd.</p>
 <% end %>
-</table>
 
-<br />
+<%# artist id %>
+<input type="hidden" name="song_url" id="song_url" value="<%= url_for @current_artist %>" />
 
-<%= link_to 'New Artist', new_artist_path %>
+<%# artist list %>
+<div class="span4">
+  <section>
+    <%= render :partial => 'list' %>
+  </section>
+</div>
+
+<%# ranking table %>
+<div class="span8">
+  <section>
+  <h3>Request Ranking (<%= @latestday %>)</h3>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#table" data-toggle="tab">Request List</a></li>
+    <li><a href="#ranking" data-toggle="tab">Ranking graph</a></li>
+    <li><a href="#point" data-toggle="tab">Point graph</a></li>
+  </ul>
+  <div class="tab-content">
+    <%# table %>
+    <div class="tab-pane active" id="table">
+      <%= render :partial => 'ranking', :locals => { :ranking => @ranking } %>
+    </div>
+    <%# ranking %>
+    <div class="tab-pane" id="ranking">
+      <div id="rank_graph" style="width: 600px; height: 600px;"></div>
+    </div>
+    <%# point %>
+    <div class="tab-pane" id="point">
+      <div id="point_graph" style="width: 600px; height: 600px;"></div>
+    </div>
+  </div>
+  </section>
+</div>

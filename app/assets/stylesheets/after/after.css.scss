@@ -1,0 +1,46 @@
+body {
+  padding-top: 40px;
+  position: relative;
+
+  > .navbar .joysound {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 20px;
+    float: right;
+    font-weight: bold;
+    color: black;
+    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  }
+}
+
+.sidenav {
+  > li > a {
+    display: block;
+    margin: 0 0 -1px;
+    padding: 8px 14px;
+    border: 1px solid #E5E5E5;
+  }
+  > li:first-child > a {
+    border-radius: 6px 6px 0 0;
+  }
+  > li:last-child > a {
+    border-radius: 0 0 6px 6px;
+  }
+}
+
+header {
+  width: 100%;
+  padding: 20px 0px;
+  color: white;
+  text-align: left;
+  background: url(http://grad3.ecoloniq.jp/sample/img/patterns_24.png) repeat, -webkit-gradient(radial, 86% 64%, 0, 86% 64%, 218, color-stop(1.00, #341235), color-stop(0.00, #920094));
+  background: url(http://grad3.ecoloniq.jp/sample/img/patterns_24.png) repeat, -webkit-radial-gradient(86% 64%, circle, #920094, #341235);
+  background: url(http://grad3.ecoloniq.jp/sample/img/patterns_24.png) repeat, -moz-radial-gradient(86% 64%, circle, #920094, #341235);
+  background: url(http://grad3.ecoloniq.jp/sample/img/patterns_24.png) repeat, -o-radial-gradient(86% 64%, circle, #920094, #341235);
+  background: url(http://grad3.ecoloniq.jp/sample/img/patterns_24.png) repeat, -ms-radial-gradient(86% 64%, circle, #920094, #341235);
+  background: url(http://grad3.ecoloniq.jp/sample/img/patterns_24.png) repeat, radial-gradient(86% 64%, circle, #920094, #341235);
+}
+
+section {
+  padding-top: 20px;
+}

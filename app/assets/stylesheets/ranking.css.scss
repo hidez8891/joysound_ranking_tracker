@@ -1,0 +1,30 @@
+// Place all the styles related to the Ranking controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.table-ranking {
+  td {
+    padding: 0px;
+
+    &.title ,
+    &.date {
+      padding-left: 20px;
+      text-align: left;
+    }
+
+    &.point ,
+    &.rank ,
+    &.diff_point ,
+    &.diff_rank {
+      padding-right: 20px;
+      text-align: right;
+    }
+
+    > a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      padding: 8px;
+    }
+  }
+}
+

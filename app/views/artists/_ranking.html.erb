@@ -1,0 +1,20 @@
+<%# ranking table %>
+<table class="table table-hover table-ranking">
+  <tbody>
+  <% ranking.each do |log| %>
+    <%
+        preday_log = log.previous_day
+        diff_point = (preday_log) ? log.point - preday_log.point : 0
+        diff_rank  = (preday_log) ? preday_log.rank - log.rank   : 0
+    %>
+    <tr>
+      <td class="title">     <%= link_to sanitize(log.song.title)      , log.song %></td>
+      <td class="artist">    <%= link_to sanitize(log.song.artist.name), log.song %></td>
+      <td class="point">     <%= link_to "%d票"  % log.point           , log.song %></td>
+      <td class="diff_point"><%= link_to "(%+d)" % diff_point          , log.song %></td>
+      <td class="rank" >     <%= link_to "%d位"  % log.rank            , log.song %></td>
+      <td class="diff_rank"> <%= link_to "(%+d)" % diff_rank           , log.song %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

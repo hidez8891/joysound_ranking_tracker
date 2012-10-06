@@ -1,0 +1,10 @@
+<%# artist list %>
+<h3>Artist</h3>
+<div class="clearfix">
+  <ul class="nav nav-list nav-stacked sidenav">
+    <% Artist.order(:name).each do |artist| %>
+      <% active = (defined?(@current_artist) and @current_artist.id == artist.id) %>
+      <li class="<%= 'active' if active %>"><%= link_to artist.name , artist %></li>
+    <% end %>
+  </ul>
+</div>

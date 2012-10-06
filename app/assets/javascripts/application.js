@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require ./highcharts/highcharts.js
+//= require ./highstock/highstock.js
+//= require_directory .
+//= require_directory ./after
