@@ -31,7 +31,7 @@ class GetRecords
 
         # new log
         # if same-day log, not create
-        unless Log.where(:song_id => song.id, :date => date)
+        unless Log.exists?(:song_id => song.id, :date => date)
           Log.create(
             :song_id => song.id ,
             :rank    => log[:rank] ,
