@@ -24,5 +24,5 @@ set :output, {
   :standard => 'log/cron.log' }
 
 every 1.day, :at => '2:00 am' do
-  runner 'GetRecords.get_records'
+  runner 'GetRecords.execute'
 end

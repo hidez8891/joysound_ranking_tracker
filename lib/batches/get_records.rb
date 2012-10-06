@@ -29,11 +29,15 @@ class GetRecords
           song.save
         end
 
-        Log.create(
-          :song_id => song.id ,
-          :rank    => log[:rank] ,
-          :point   => log[:point] ,
-          :date    => date )
+        # new log
+        # if same-day log, not create
+        unless Log.where(:song_id => song.id, :date => date)
+          Log.create(
+            :song_id => song.id ,
+            :rank    => log[:rank] ,
+            :point   => log[:point] ,
+            :date    => date )
+        end
       end
     end
   end
