@@ -5,3 +5,7 @@
 require File.expand_path('../config/application', __FILE__)
 
 JoysoundRankingWatcher::Application.load_tasks
+
+task :cron => :environment do
+  GetRecords.execute
+end
